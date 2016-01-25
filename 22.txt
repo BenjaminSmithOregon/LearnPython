@@ -1,0 +1,116 @@
+Words and Symbols used
+	Next to each word or symbol, write its name and what it does. 
+	
+Python file extension: .py
+
+PRINTING
+print: prints the line
+" " : anything between the parenthesis is treated as a string
+
+COMMENTS
+# : Put the pound sign before any text that you want commented out
+
+NUMBERS AND MATH
++ : addition
+- : subtraction
+/ : division
+* : multiply
+% : mod - gives the remainder of the division
+< OR > OR >= OR <=: outputs a boolean
+
+VARIABLES AND NAMING
+= : assigns a value to a variable
+	EX: cars = 10
+_ : used between words in variable name
+	EX: number_of_cars = 20
+
+MORE STRING/PRINTING STUFF
+%s : prints the string to the right
+	EX: print "I say %s!" % "hello"
+%d: prints the number to the right
+	EX: print "I say %d!" % 123
+%r : prints the raw data to the right (for debugging)
+	EX: print "I say %r!" % "hello"
+"R" * 10 : concatenates 10 letter R's
+	EX: RRRRRRRRRR
+Adding a comma at the end of a line continues that line and does not create a new line
+	Ex: print "Hello",
+	      print "There"
+	Output: Hello There
+You can print multiple things at a time
+	EX: test = "%r %r %r %r"
+		  print test % (1, 2, 3 ,4)
+	Output: 1 2 3 4
+\n : new line
+""" : this is a triple quote (no spaces between) anything you write in between them will be output exactly like it is written
+\t : this is a tab
+\\ OR \' OR \" : put a backslash before a backslash, single or double quote to escape them
+	EX: 'I am 6\'2" tall' OR "I am 6'2\" tall"
+
+USER INPUT
+	EX: print "How are you?"
+		  answer = raw_input()
+		  print answer
+	Alternative way: answer = raw_input("How are you?")
+		  print answer
+
+PASSING VARIABLES TO SCRIPTS
+	EX: from sys import argv
+		  sys: the library
+		  argv : the argument
+	EX: script, first, second = argv
+		  print first
+		  print second
+	Output: (whatever was passed in at execution) 1 2
+
+PASSING FILES TO SCRIPTS
+	EX: script, filename = argv
+	txt = open(filename) : This opens the file passed in in the argument and assigns the contents to "txt"
+	.read() : This is a command of the "txt" variable.  It says to perform the read command on the "txt" variable
+		EX: txt.read() - there are no parameters passed into the read() command
+	
+READING AND WRITING FILES
+close() : closes the file
+read() : reads the contents of the file & you can assign the result to a variable
+readline() : reads just one line of text
+truncate() : empties/erases the file contants
+write('stuff') : writes 'stuff' to the file
+	EX: test.truncate : this erases the contents of "test"
+		  test.close() : this closes the file "test"
+		  read_contents = test.read()
+		  test.write("This is a test")
+			Output: This is a test
+
+MORE READING AND WRITING
+from os.path import exists : imports "exists" from the os.path library
+	"exists" checks to see if a file exists
+	EX: exists(check_file)
+	output : False  OR True (based on whether the file exists or not)
+len : tells how many bytes long a string is
+	EX: len(test_string)
+	Output: 20
+open : opens a file
+	EX: open(test_file)
+
+FUNCTIONS, NAMES, & VARIABLES
+def() : defines a function
+	EX: def sample_function(var1, var2):
+You can pass variables as numbers, strings, or you can do math with them
+	EX: def sample_one(10, 20):
+		  def sample_one(10 + 1, 20 +2):
+		  var1 = 0
+		  var2 = 1
+		  def sample_one(var1 + 10, var2 + 2):
+
+FUNCTIONS AND FILES
+sample.read() : reads file named sample
+sample.seek(0) : sets read point for the file sample to whatever number is placed inside of the parenthesis (0 in this case)
+sample.readline() : reads only the current line that you are reading from the file sample
+
+RETURNING VALUES IN A FUNCTION
+return : returns a value
+	EX: return a + b
+		  return a - b
+		  return a * b
+		  return a / b
+
