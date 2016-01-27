@@ -1,5 +1,7 @@
 print  " You enter a dark room with two doors marked with a 1 and a 2....then you turn around and see there is another door behind you marked with a 666 and there is a rope swinging from above....wait there is something on the floor.  You examine it closer and realize that there is a line on the floor and as you follow it, you realize it makes the shape of a square.  Then you see a handle.  It is a trapdoor.  Do you open door 1, 2, 666, the trapdoor, or do you climb the rope?"
 
+# Change here
+
 door = raw_input("> ")
 
 if door == "1":
