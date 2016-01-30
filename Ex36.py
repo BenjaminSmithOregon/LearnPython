@@ -16,7 +16,7 @@ def start():
 		
 		if cliffs in ("climb the rope", "climb rope", "the rope", "climb"):
 			rope()
-		elif cliffs in ("walk along the narrow path", "walk along the path", "walk the narrow path", "narrow path"):
+		elif cliffs in ("walk along the narrow path", "walk along the path", "walk the narrow path", "narrow path", "take path", "walk along path"):
 			path()
 		else:
 			print "Try something else."
@@ -44,33 +44,35 @@ def rope():
 			
 	
 def path():
-	print "You start walking up the path and as you ascend the cliff face"
-	print "the path starts to narrow.  You decide to continue on and start"
-	print "shimmying along in areas.  At one point it is only narrow enough"
-	print "to walk one foot in front of the other.  The loose rock breaks away"
-	print "and as you fall to a bloody death you think to yourself, ""why didn't"
-	print "I take the rope."
+	print """\tYou start walking up the path and as you ascend the cliff
+	face the path starts to narrow.  You decide to continue on and 
+	start shimmying along in areas.  At one point it is only narrow 
+	enough to walk one foot in front of the other.  The loose rock breaks 
+	away and as you fall to a bloody death you think to yourself, ""why 
+	didn't I take the rope."""
 	
 	death()
 
 	
 
 def bridge():
-	print "You slowly make you way across the rickety rope bridge.  As you get to"
-	print "the halfway point, the boards beneath you start to give way.  You decide"
-	print "to turn around and make your way back and try the rope.  As you turn the"
-	print "board beneath you cracks in half and you fall helplessly into the canyon below."
-	print "Thankfully you splash into a deep part of the river and come up gasping for air."
-	print "As you gain your breath, the current rushes you down stream as you bob above"
-	print "and below the surface of the water you have a chance to grab onto a rock outcropping."
-	print "Do you grab onto the rocks or take your chances floating downstream?"
+	print """\tYou slowly make you way across the rickety rope bridge.  
+	As you get to the halfway point, the boards beneath you start to give
+	way.  You decide to turn around and make your way back and try the
+	rope.	As you turn the board beneath you cracks in half and you 
+	fall helplessly into the canyon below. Thankfully you splash into
+	a deep part of the river and come up gasping for air. As you gain
+	your breath, the current rushes you down stream as you bob above
+	and below the surface of the water you have a chance to grab onto
+	a rock outcropping. Do you grab onto the rocks or take your chances
+	floating downstream?"""
 	
 	while True:
 		rocks = raw_input("> ")
 		
 		if rocks in ("grab onto the rock outcropping", "grab onto the rocks", "grab the rocks", "grab the rock outcropping"):
 			waterfall()
-		elif rocks in ("take chance", "take chances", "float downstream", "take your chances floating downstream", "take a chance floating downstream"):
+		elif rocks in ("take chance", "take chances", "float downstream", "take your chances floating downstream", "take a chance floating downstream", "take a chance", "take your chances"):
 			death2("As you float downstream your clothes get wrapped around a submerged branch and the current sucks you under.  You slowly watch the light fade as the bubbles float over your head from the frothy current.")
 		else:
 			print "Try something different."
