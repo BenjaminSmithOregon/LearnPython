@@ -29,7 +29,7 @@ while True:
 # class
 class Person(object):
 	object = ' "test_variable" '
-	print "Here is the person class with a passed in variable that = %s" % object
+	print "Here is the Person class with a passed in variable that = {}".format(object)
 	print "\n"
 	
 # continue
@@ -43,7 +43,7 @@ while var < 15:
 print "We are all done."
 print "\n"
 
-# definition
+# function
 def my_first_definition():
 	print "This is my first definition with zero passed in variables."
 	print "\n"
@@ -86,8 +86,9 @@ while True:
 	try:
 		x = int(raw_input("Please enter a number: "))
 		break
-	except ValueError:
-		print "That is not a valid number.  Please try again."
+	except ValueError as ex:
+		message = ex.message
+		print "That is not a valid number.  Your error is: %s.  Please try again." % message
 print "\n"
 
 # exec
@@ -111,3 +112,106 @@ def divide_by_zero(x, y):
 divide_by_zero(1, 0)
 
 divide_by_zero(2, 1)
+
+# for
+print "This is the for loop."
+for number in [1, 2, 3, 4 ,5]:
+	print "The current number is: ", number	
+print "\n"
+
+# from
+# Not really sure how to implement this
+
+# global
+def global_func():
+	global var
+	print var
+	var = "This is the new GLOBAL var."
+	print var
+
+var = "This is the INITIAL var."	
+global_func()
+print var
+print "\n"
+
+# if
+x = 7
+y = 6
+print "X is %d, Y is %d." % (x, y)
+
+if x > y:
+	print "X IS greater than Y"
+else:
+	print "X is NOT greater than Y."
+print "\n"	
+	
+# import
+import os
+
+print "This is showing that I have imported the 'os' module"
+print "\n"
+
+# in
+print "This is the in definition"
+for test in 'test':
+	print "This is the letter %s that I have pulled from test." % test
+print "\n"
+
+# is
+print "This is the 'is' definition."
+print "100 is 100", 100 is 100 
+print "100 is 101", 100 is 101
+print "\n"
+
+# lambda
+print "This is the lambda function."
+print "passing in 2 to the lambda and squaring it to get..."
+squared = lambda x: x ** x
+print squared(2)
+print "\n"
+
+# not
+print "This is the NOT function."
+print "not True = ", not True
+print "\n"
+
+# or
+print "This is the OR function."
+print "True or False = ", True or False
+print "\n"
+
+# pass
+print "This is the pass function."
+for letter in 'pass':
+	if letter == 'a':
+		pass
+		print "This is the pass line."
+	print "The current letter is %s." % letter
+print "\n"
+
+# print
+print "This is the print function."
+print "You are now seeing what I am telling to print."
+print "\n"
+
+# raise
+# Not really sure how to use the raise statement
+
+# return
+print "This is the return statement."
+
+def return_func(a, b):
+	test = a + b
+	return test
+
+print return_func(5, 5)
+print "\n"
+
+# try
+print "This is the try function."
+try:
+	print 5 > t
+except:
+	print "That is not correct."
+print "\n"
+
