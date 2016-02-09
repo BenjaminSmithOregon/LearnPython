@@ -215,3 +215,44 @@ except:
 	print "That is not correct."
 print "\n"
 
+# while
+print "This is the while loop."
+number = 0
+while number < 5:
+	print number
+	if number < 5:
+		number += 1
+print "This is the end of the loop."
+print "\n"
+
+#with
+print "This is the with statement."
+print "opening file..."
+with open('Ex37.txt') as x:
+	output = x.read()
+	print output
+print "Closing file..."
+print "\n"
+
+#yield
+#I am not quite sure how this is working, but I understand somewhat what it is doing.
+print "This is the yield function."
+def is_prime(number):
+	if number > 1:
+		if number == 2:
+			return True
+		if number % 2:
+			return False
+		for current in range(3, int(math.sqrt(number) + 1), 2):
+			if number % current == 0:
+				return False
+		return True
+	return False
+			
+def get_primes(number):
+	while True:
+		if is_prime(number):
+			number = yield number
+		number += 1
+		
+print get_primes(11)
