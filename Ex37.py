@@ -1,4 +1,4 @@
-# This Python script tests all of the different definitions
+# This Python script tests all of the different functions/definitions
 
 # and
 boolean = True and False
