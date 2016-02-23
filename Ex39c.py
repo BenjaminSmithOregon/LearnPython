@@ -31,8 +31,8 @@ print "Florida's abbreviation is: %s" % hashmap.get(states, 'Florida')
 
 # do it by using the states then cities dict
 print '-' * 10
-print "Michigan has: %s" % hashmap.get(cities, hashmap.get(states, 'Michigan')
-print "Florida has: %s" % % hashmap.get(cities, hashmap.get(states, 'Florida')
+print "Michigan has: %s" % hashmap.get(cities, hashmap.get(states, 'Michigan'))
+print "Florida has: %s" % hashmap.get(cities, hashmap.get(states, 'Florida'))
 
 # print every state abbreviation
 print '-' * 10
