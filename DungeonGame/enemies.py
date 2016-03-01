@@ -1,5 +1,13 @@
 import random
 
+class NoEnemy(object):
+	
+	def __init__(self, weapon, armor):
+		self.type = "None"
+		self.hitpoints = random.randint(20, 50)
+		self.weapon = weapon
+		self.armor = armor
+
 class Troll(object):
 	
 	def __init__(self, weapon, armor):

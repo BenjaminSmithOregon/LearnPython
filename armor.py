@@ -23,3 +23,7 @@ class Armor(object):
 		else:
 			self.protection = random.randint(7, 15)
 			self.armor = armorAssign
+			
+	def pickUp(self, armor, protection):
+		self.armor = armor
+		self.protection = protection

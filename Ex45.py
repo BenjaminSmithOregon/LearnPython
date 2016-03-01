@@ -55,10 +55,8 @@ cell.play()
 enemy1 = RandomEnemy()
 enemy1 = enemy1.randomize()
 
-decision(player, enemy1)
+decision(player, enemy1, cell)
 
-#block = Block(player, enemy1)
-#block = block.action()
 
 #print """\n\tYour enemy is a %s and has %s armor with %d protection and
 #	a %s for a weapon that inflicts %d damage.""" % (enemy.type, enemy.armor.armor, 

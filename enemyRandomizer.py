@@ -9,8 +9,8 @@ class RandomEnemy(object):
 		self.enemyAssign = "none"
 		
 	def randomize(self):
-		self.enemyList = ["troll", "ogre", "knight", "archer", "dwarf"]
-		index = random.randint(0,4)
+		self.enemyList = ["troll", "ogre", "knight", "archer", "dwarf", "none"]
+		index = random.randint(0,5)
 		self.enemyAssign = self.enemyList[index]
 		
 		if self.enemyAssign == "troll":
@@ -41,10 +41,15 @@ class RandomEnemy(object):
 			armor2 = armor.assign()
 			archer = EnemyArcher(weapon, armor)
 			return archer
-		else:
+		elif self.enemyAssign == "dwarf":
 			weapon = DwarfWeapon()
 			weapon2 = weapon.assign()
 			armor = Armor()
 			armor2 = armor.assign()
 			dwarf = Dwarf(weapon, armor)
 			return dwarf
+		else:
+			weapon = NoWeapon()
+			armor = Armor()
+			noEnemy = NoEnemy(weapon, armor)
+			return noEnemy
