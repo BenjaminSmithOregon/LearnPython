@@ -19,7 +19,7 @@ def battleMath(character, enemy, who):
 def hitpoints(character, enemy):
 
 	if enemy.type == "none":
-		print "\n\t\t\tThere is no enemy present in this room.  You move on to the next room."
+		print "\n\t\t\tThere is no enemy present here.  You decide not to tarry and move on."
 	else:
 		print """\n\t\t\tYour enemy is a(n) %s with %d hitpoints and has %s armor
 		\twith %d protection and a %s for a weapon that inflicts %d damage.""" % (enemy.type, enemy.hitpoints, enemy.armor.armor, enemy.armor.protection,
@@ -32,19 +32,24 @@ def hitpoints(character, enemy):
 
 def hitpointCheck(character, enemy, room):
 
-	if character.hitpoints <= 0:
+	if character.hitpoints <= 0.0:
 		print "You have taken a beating and your life is gone.  Better luck next time!"
+		exit()
 	else:
-		if enemy.hitpoints <= 0:
+		if enemy.hitpoints <= 0.0:
 			print "\nYou have defeated your enemy! You scour the %s's" % enemy.type
 			print "body for armor and its weapon."
 			character.pickUpArmor(enemy.armor)
 			character.pickUpWeapon(enemy.weapon)
 
-			if character.hitpoints <= 15:
+			if character.hitpoints <= 25:
 				character.hitpoints = character.hitpoints + 20
 				print "You find a healing potion in the %s's pocket and drink it." % enemy.type
 				print "Your hitpoints have increased to %d" % character.hitpoints
+
+			control = RoomControl(character = character, room = room, enemy = room.enemy)
+			roomLoop = control.defeat()
+			decision(roomLoop.player, roomLoop.enemy, roomLoop)
 		else:
 			decision(character, enemy, room)
 
@@ -53,7 +58,9 @@ def decision(character, enemy, room):
 		hitpoints(character, enemy)
 
 		if enemy.type == "none":
-			pass
+			control = RoomControl(character = character, room = room, enemy = room.enemy)
+			roomLoop = control.defeat()
+			decision(roomLoop.player, roomLoop.enemy, roomLoop)
 		else:
 			loopFight = False
 			while loopFight == False:
@@ -68,7 +75,9 @@ def decision(character, enemy, room):
 
 				elif choice in ("run", "Run"):
 					loopFight = True
-					roomControl(character, room, "run")
+					control = RoomControl(character = character, room = room, enemy = room.enemy)
+					roomLoop = control.run(room.enemy.type)
+					decision(roomLoop.player, roomLoop.enemy, roomLoop)
 				else:
 					print "Try something different.\n"
 

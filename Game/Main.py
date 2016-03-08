@@ -1,4 +1,5 @@
 import random
+import pdb
 
 from character import *
 from battle import *
@@ -40,17 +41,12 @@ while player is None:
 		player = "None"
 
 
+# Initiates game play and starts player in the "cell" room
 room = Cell(player)
 room.play()
 
-# Initiates game play and starts player in the "cell" room
-cell = Cell(player)
-cell.play()
+control = RoomControl(character = player, room = room, enemy = room.enemy)
 
-# Moves from cell to first room
-lowerRoom = LowerRoom(player)
-lowerRoom.play()
+room = control.defeat()
 
-decision(player, lowerRoom.enemy, lowerRoom)
-
-# Moves the player to the next room
+decision(room.player, room.enemy, room)

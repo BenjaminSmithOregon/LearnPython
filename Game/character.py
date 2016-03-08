@@ -10,7 +10,7 @@ class Archer(object):
 	def pickUpWeapon(self, weapon):
 		if weapon.damage >= self.weapon.damage:
 			if weapon.weapon in ("bow", "long bow", "cross bow"):
-				print "You pick up the enemy's %s" % weapon.weapon
+				print "\nYou pick up the enemy's %s" % weapon.weapon
 				self.weapon = weapon
 			else:
 				print "You can not use the %s, since you don't posses the skills to use it." % weapon.weapon
@@ -19,7 +19,7 @@ class Archer(object):
 
 	def pickUpArmor(self, armor):
 		if self.armor <= armor.protection:
-			print "You pick up the enemy's %s" % self.armor.armor
+			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
 			print "Your armor is superior to the enemy's armor, so you leave it there."
@@ -36,7 +36,7 @@ class Swordsman(object):
 	def pickUpWeapon(self, weapon):
 		if weapon.damage >= self.weapon.damage:
 			if weapon.weapon in ("sword", "short sword", "long sword"):
-				print "You pick up the enemy's %s" % weapon.weapon
+				print "\nYou pick up the enemy's %s" % weapon.weapon
 				self.weapon = weapon
 			else:
 				print "You can not use the %s, since you don't posses the skills to use it." % weapon.weapon
@@ -45,7 +45,7 @@ class Swordsman(object):
 
 	def pickUpArmor(self, armor):
 		if self.armor <= armor.protection:
-			print "You pick up the enemy's %s" % self.armor.armor
+			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
 			print "Your armor is superior to the enemy's armor, so you leave it there."
@@ -62,7 +62,7 @@ class Thief(object):
 	def pickUpWeapon(self, weapon):
 		if weapon.damage >= self.weapon.damage:
 			if weapon.weapon in ("blow gun", "dagger", "throwing knives"):
-				print "You pick up the enemy's %s" % weapon.weapon
+				print "\nYou pick up the enemy's %s" % weapon.weapon
 				self.weapon = weapon
 			else:
 				print "You can not use the %s, since you don't posses the skills to use it." % weapon.weapon
@@ -71,7 +71,7 @@ class Thief(object):
 
 	def pickUpArmor(self, armor):
 		if self.armor <= armor.protection:
-			print "You pick up the enemy's %s" % self.armor.armor
+			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
 			print "Your armor is superior to the enemy's armor, so you leave it there."
