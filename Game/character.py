@@ -18,7 +18,7 @@ class Archer(object):
 			print "You decide to leave the %s there as it is inferior to your %s" % (weapon.weapon, self.weapon.weapon)
 
 	def pickUpArmor(self, armor):
-		if self.armor <= armor.protection:
+		if self.armor.protection < armor.protection:
 			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
@@ -44,7 +44,7 @@ class Swordsman(object):
 			print "You decide to leave the %s there as it is inferior to your %s" % (weapon.weapon, self.weapon.weapon)
 
 	def pickUpArmor(self, armor):
-		if self.armor <= armor.protection:
+		if self.armor.protection < armor.protection:
 			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
@@ -70,7 +70,7 @@ class Thief(object):
 			print "You decide to leave the %s there as it is inferior to your %s" % (weapon.weapon, self.weapon.weapon)
 
 	def pickUpArmor(self, armor):
-		if self.armor <= armor.protection:
+		if self.armor.protection < armor.protection:
 			print "\nYou pick up the enemy's %s" % self.armor.armor
 			self.armor = armor
 		else:
